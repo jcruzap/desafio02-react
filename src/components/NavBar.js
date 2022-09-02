@@ -1,27 +1,29 @@
-let background = { background: 'black' }
+import React from 'react'
+import { CartWidget } from './CartWidget'
 
-const NavbarComponent = () => {
+const Navbar = () => {
     return (
         <>
-            <nav style={background} className="navbar navbar-expand-md navbar-dark">
-                <div className="container">
-                    <img src="./public/favicon.ico" className="navbar-logo" alt="logo" />
-                    <button type="button" className="navbar-toggler collapsed" data-toggle="collapse" data-target="#main-nav">
-                        <span className="menu-icon-bar"></span>
-                        <span className="menu-icon-bar"></span>
-                        <span className="menu-icon-bar"></span>
-                    </button>
-                    <div id="main-nav" className="collapse navbar-collapse">
-                        <ul class="navbar-nav ml-auto">
-                            <li><a href="index.html" className="nav-item nav-link active">Inicio</a></li>
-                            <li><a href="productos.html" className="nav-item nav-link">Productos</a></li>
-                            <li><a href="contacto.html" className="nav-item nav-link">Contacto</a></li>
-                        </ul>
+            <nav className="navbar navbar-expand-sm navbar-dark bg-success">
+                <a class="navbar-brand" href="#">
+                    <img src="./clara-logo.png" alt="Logo" width="50" height="30" className="d-inline-block align-text-top" />
+                    Clara Joyas
+                </a>
+                <button className="navbar-toggler float-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarToggler">
+                    <div className="navbar-nav">
+                        <a className="nav-link" href="">Incio</a>
+                        <a className="nav-link" href="">Nosotros</a>
+                        <a className="nav-link" href="">Ubicación</a>
+                        <a className="nav-link" href="">Contacto</a>
                     </div>
                 </div>
+                <CartWidget />
             </nav>
         </>
-    );
+    )
 }
 
-export default NavbarComponent;
+export default Navbar
